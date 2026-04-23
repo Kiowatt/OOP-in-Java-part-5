@@ -83,7 +83,7 @@ public class Armour extends Equippable implements Item
 
         Armour rhsItem = (Armour) rhs;
 
-        return this.name.equals(rhsItem.name)
+        return this.getName().equals(rhsItem.getName()) 
             && this.getMaterial().equals(rhsItem.getMaterial())
             && this.getModifier().equals(rhsItem.getModifier())
             && this.getModifierLevel() == rhsItem.getModifierLevel()
@@ -114,7 +114,15 @@ public class Armour extends Equippable implements Item
     @Override
     public String toString()
     {
-        return "  Refer to the previous assignment...";
+        return String.format(
+            FMT_STR,
+            this.getName(),
+            this.getDurability(),
+            this.getDefense(),
+            this.getMaterial(),
+            this.getModifier(),
+            this.getModifierLevel(),
+            this.getElement());
     }
 }
 
