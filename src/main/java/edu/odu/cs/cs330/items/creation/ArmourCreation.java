@@ -22,14 +22,14 @@ public class ArmourCreation implements ItemCreationStrategy
     public Item fromDefaults()
     {
         // Maybe call a Default Constructor...
-        return null;
+        return new Armour();
     }
 
     @Override
     public int requiredNumberOfValues()
     {
         // What is the correct return value?
-        return -1;
+        return 7;
     }
 
     @SuppressWarnings({
@@ -40,14 +40,17 @@ public class ArmourCreation implements ItemCreationStrategy
     public Item fromTokens(final String... tokens)
     {
         // Maybe call a Constructor that accepts multiple arguments...
-        return new Armour();
+        return new Armour(
+            tokens[0],
+            Integer.parseInt(tokens[1]),
+            Integer.parseInt(tokens[2]),
+            tokens[3],
+            tokens[4],
+            Integer.parseInt(tokens[5]),
+            tokens[6]);
     }
 
-    @SuppressWarnings({
-        "PMD.LawOfDemeter",
-        "PMD.LocalVariableCouldBeFinal",
-        "PMD.OnlyOneReturn"
-    })
+
     @Override
     public Item fromExisting(final Item original)
     {
@@ -55,9 +58,16 @@ public class ArmourCreation implements ItemCreationStrategy
             return null;
         }
 
-        Armour theOriginal = (Armour) original;
+        Armour a = (Armour) original;
 
         // Maybe call a Constructor that accepts multiple arguments...
-        return new Armour();
+        return new Armour(
+            a.getName(),
+            a.getDurability(),
+            a.getDefense(),
+            a.getMaterial(),
+            a.getModifier(),
+            a.getModifierLevel(),
+            a.getElement());
     }
 }
