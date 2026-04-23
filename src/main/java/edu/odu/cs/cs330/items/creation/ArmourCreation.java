@@ -29,7 +29,7 @@ public class ArmourCreation implements ItemCreationStrategy
     public int requiredNumberOfValues()
     {
         // What is the correct return value?
-        return 8;
+        return 7;
     }
 
     @SuppressWarnings({
