@@ -41,13 +41,13 @@ public class ArmourCreation implements ItemCreationStrategy
     {
         // Maybe call a Constructor that accepts multiple arguments...
         return new Armour(
-            tokens[0],
-            Integer.parseInt(tokens[1]),
-            Integer.parseInt(tokens[2]),
-            tokens[3],
-            tokens[4],
-            Integer.parseInt(tokens[5]),
-            tokens[6]);
+            tokens[1],
+            Integer.parseInt(tokens[3]),
+            Integer.parseInt(tokens[4]),
+            tokens[2],
+            tokens[5],
+            Integer.parseInt(tokens[6]),
+            tokens[7]);
     }
 
 
