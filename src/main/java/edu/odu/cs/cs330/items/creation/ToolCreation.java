@@ -29,7 +29,7 @@ public class ToolCreation implements ItemCreationStrategy
     public int requiredNumberOfValues()
     {
         // What is the correct return value?
-        return 6;
+        return 7;
     }
 
     @SuppressWarnings({
@@ -41,12 +41,12 @@ public class ToolCreation implements ItemCreationStrategy
     {
         // Maybe call a Constructor that accepts multiple arguments...
         return new Tool(
-            tokens[0],
-            Integer.parseInt(tokens[2]),
-            Integer.parseInt(tokens[3]),
             tokens[1],
-            tokens[4],
-            Integer.parseInt(tokens[5]));
+            Integer.parseInt(tokens[3]),
+            Integer.parseInt(tokens[4]),
+            tokens[2],
+            tokens[5],
+            Integer.parseInt(tokens[6]));
     }
 
     @SuppressWarnings({
