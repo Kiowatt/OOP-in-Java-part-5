@@ -41,22 +41,20 @@ public class ArmourCreation implements ItemCreationStrategy
     {
         // Maybe call a Constructor that accepts multiple arguments...
         return new Armour(
-            tokens[1],
+            tokens[0],
+            Integer.parseInt(tokens[2]),
             Integer.parseInt(tokens[3]),
-            Integer.parseInt(tokens[4]),
-            tokens[2],
-            tokens[5],
-            Integer.parseInt(tokens[6]),
-            tokens[7]);
+            tokens[1],
+            tokens[4],
+            Integer.parseInt(tokens[5]),
+            tokens[6]);
     }
 
 
     @Override
     public Item fromExisting(final Item original)
     {
-        if (!(original instanceof Armour)) {
-            return null;
-        }
+
 
         Armour a = (Armour) original;
 
