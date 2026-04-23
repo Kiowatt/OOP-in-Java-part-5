@@ -29,7 +29,7 @@ public class ToolCreation implements ItemCreationStrategy
     public int requiredNumberOfValues()
     {
         // What is the correct return value?
-        return 6;
+        return 7;
     }
 
     @SuppressWarnings({
