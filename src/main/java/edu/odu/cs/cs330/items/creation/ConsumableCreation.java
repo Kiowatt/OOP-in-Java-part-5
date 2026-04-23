@@ -22,32 +22,26 @@ public class ConsumableCreation implements ItemCreationStrategy
     public Item fromDefaults()
     {
         // Maybe call a Default Constructor...
-        return null;
+        return new Consumable();
     }
 
     @Override
     public int requiredNumberOfValues()
     {
         // What is the correct return value?
-        return -1;
+        return 3;
     }
 
-    @SuppressWarnings({
-        "PMD.LawOfDemeter",
-        "PMD.LocalVariableCouldBeFinal"
-    })
     @Override
     public Item fromTokens(final String... tokens)
     {
         // Maybe call a Constructor that accepts multiple arguments...
-        return new Consumable();
+        return new Consumable(
+            tokens[0],
+            tokens[1],
+            Integer.parseInt(tokens[2]));
     }
 
-    @SuppressWarnings({
-        "PMD.LawOfDemeter",
-        "PMD.LocalVariableCouldBeFinal",
-        "PMD.OnlyOneReturn"
-    })
     @Override
     public Item fromExisting(final Item original)
     {
@@ -55,9 +49,12 @@ public class ConsumableCreation implements ItemCreationStrategy
             return null;
         }
 
-        Consumable theOriginal = (Consumable) original;
+        Consumable c = (Consumable) original;
 
         // Maybe call a Constructor that accepts multiple arguments...
-        return new Consumable();
+        return new Consumable(
+            c.getName(),
+            c.getEffect(),
+            c.getNumberOfUses());
     }
 }
