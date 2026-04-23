@@ -48,12 +48,6 @@ public class ToolCreation implements ItemCreationStrategy
             tokens[4],
             Integer.parseInt(tokens[5]));
     }
-
-    @SuppressWarnings({
-        "PMD.LawOfDemeter",
-        "PMD.LocalVariableCouldBeFinal",
-        "PMD.OnlyOneReturn"
-    })
     @Override
     public Item fromExisting(final Item original)
     {
