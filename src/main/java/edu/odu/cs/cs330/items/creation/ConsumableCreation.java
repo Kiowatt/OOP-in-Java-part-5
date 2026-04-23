@@ -29,7 +29,7 @@ public class ConsumableCreation implements ItemCreationStrategy
     public int requiredNumberOfValues()
     {
         // What is the correct return value?
-        return 4;
+        return 3;
     }
 
     @Override
@@ -37,9 +37,9 @@ public class ConsumableCreation implements ItemCreationStrategy
     {
         // Maybe call a Constructor that accepts multiple arguments...
         return new Consumable(
+            tokens[0],
             tokens[1],
-            tokens[2],
-            Integer.parseInt(tokens[3]));
+            Integer.parseInt(tokens[2]));
     }
 
     @Override
