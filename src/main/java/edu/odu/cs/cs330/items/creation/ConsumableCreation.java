@@ -45,9 +45,7 @@ public class ConsumableCreation implements ItemCreationStrategy
     @Override
     public Item fromExisting(final Item original)
     {
-        if (!(original instanceof Consumable)) {
-            return null;
-        }
+
 
         Consumable c = (Consumable) original;
 
