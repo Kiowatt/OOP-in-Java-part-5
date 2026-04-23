@@ -37,9 +37,9 @@ public class ConsumableCreation implements ItemCreationStrategy
     {
         // Maybe call a Constructor that accepts multiple arguments...
         return new Consumable(
-            tokens[0],
             tokens[1],
-            Integer.parseInt(tokens[2]));
+            tokens[2],
+            Integer.parseInt(tokens[3]));
     }
 
     @Override
